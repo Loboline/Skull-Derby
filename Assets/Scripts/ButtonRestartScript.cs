@@ -20,7 +20,11 @@ public class ButtonRestartScript : MonoBehaviour
 
     public void restartScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

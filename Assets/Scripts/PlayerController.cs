@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float startSpeed = 20.0f; //var holding the number for the speed the player has from start
     public bool gameOver = false; //var håller info om spelet är slut eller inte
     public GameObject RestartButton; //deklarerar knappen som ett gameobject så vi kan koppla den och interagera med den
+    public GameObject menuButton; //deklarerar knappen som ett gameobject så vi kan koppla den och interagera med den
     public GameObject GameOverText; //deklarerar GamOvertexten som ett gameobject så vi kan koppla den och interagera med den
     public float horizontalInput; // håller ett värde som vi använder till att multiplicera styrningen med
     public float turnSpeed = 50.0f; //var för hastigheten som vi kan rotera
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         RestartButton.SetActive(false); //sätter knapp att vara icke aktiv från början (då playern inte är död än)
+        menuButton.SetActive(false); //sätter knapp att vara icke aktiv från början (då playern inte är död än)
         GameOverText.SetActive(false); //sätter texten att vara icke aktiv från början (då playern inte är död än)
     }
 
@@ -61,7 +63,8 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true; //bool-variabeln gameOver blir True (och kan initiera GameOver av olika slag)
             RestartButton.SetActive(true); //Gör starta-om-knappen synlig
-            GameOverText.SetActive(true); //Gör Game Over-texten synlig
+            GameOverText.SetActive(true);//Gör Game Over-texten synlig
+            menuButton.SetActive(true);
 
         }
         else if (collision.gameObject.CompareTag("Enemy"))
@@ -70,6 +73,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true; //bool-variabeln gameOver blir True (och kan initiera GameOver av olika slag)
             RestartButton.SetActive(true); //Gör starta-om-knappen synlig
             GameOverText.SetActive(true); //Gör Game Over-texten synlig
+            menuButton.SetActive(true);
             Destroy(collision.gameObject); //Förstör gameObjektet med taggen Enemy
 
         }
