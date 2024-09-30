@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTruck : Enemy
+public class EnemyTruck : Enemy //INHERITANCE
 {
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class EnemyTruck : Enemy
     {
         
     }
-    public override void CheckForDestruction()
+    public override void CheckForDestruction() //POLYMORPHISM
     {
         if (carHealth <= 5)
         {

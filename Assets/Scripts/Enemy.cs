@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         CheckForDestruction();
     }
 
-    public virtual void CheckForDestruction()
+    public virtual void CheckForDestruction() //INHERITANCE
     {
         if(carHealth <= 0)
         {
