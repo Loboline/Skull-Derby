@@ -8,8 +8,8 @@ using TMPro; //Överst: behöver vara med för användning av TextMeshPro i skripts
 
 public class PlayerController : MonoBehaviour
 {
-    private float playerSpeed = 20.0f; //var for the speed the player currently has
-    private float startSpeed = 20.0f; //var holding the number for the speed the player has from start
+    private float playerSpeed = 15.0f; //var for the speed the player currently has
+    private float startSpeed = 15.0f; //var holding the number for the speed the player has from start
     public bool gameOver = false; //var håller info om spelet är slut eller inte
     public GameObject RestartButton; //deklarerar knappen som ett gameobject så vi kan koppla den och interagera med den
     public GameObject menuButton; //deklarerar knappen som ett gameobject så vi kan koppla den och interagera med den
@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        MovePlayer(); //ABSTRACTION. Funktionen som kallas sköter den konstanta hastigheten som playern har. 
-        NitroActivation(); //ABSTRACTION. Funktionen som kallas kollar om någon trycker på Space-knappen för speedboost, och om charges finns kvar: öka farten
+        MovePlayer(); // ABSTRACTION. Funktionen som kallas sköter den konstanta hastigheten som playern har. 
+        NitroActivation(); // ABSTRACTION. Funktionen som kallas kollar om någon trycker på Space-knappen för speedboost, och om charges finns kvar: öka farten
     }
 
 

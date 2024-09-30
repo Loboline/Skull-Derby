@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public int carHealth = 10;
-    // Start is called before the first frame update
-    void Start()
+    private int baseHealth = 10; // ENCAPSULATION Making this number hard to corrupt by using this as a backing field, while 
+    public int eHealth; //temporary health
+    public int carHealth
+        {
+        get {return baseHealth; } // ENCAPSULATION
+        set {baseHealth = value;}        
+}
+// Start is called before the first frame update
+void Start()
     {
         
     }
@@ -22,9 +28,9 @@ public class Enemy : MonoBehaviour
         CheckForDestruction();
     }
 
-    public virtual void CheckForDestruction() //INHERITANCE
+    public virtual void CheckForDestruction() // INHERITANCE
     {
-        if(carHealth <= 0)
+        if (carHealth <= 0)
         {
             Destroy(gameObject);
         }

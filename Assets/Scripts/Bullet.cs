@@ -21,8 +21,8 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         //om taggen på gameObjectet vi krockar med är ”Enemy”...
         {
-            Enemy eHealth = collision.gameObject.GetComponent<Enemy>(); //Hämtar in koppling till vad som träffade kulan
-            eHealth.AdjustCarHealth(damage); //kopplingen till skriptet på det vi träffade möjliggör att vi kan minska hälsan på det som träffades genom dess AdjustCarHealth-method..
+            Enemy hurtEnemy = collision.gameObject.GetComponent<Enemy>(); //Hämtar in koppling till vad som träffade kulan
+            hurtEnemy.AdjustCarHealth(damage); //kopplingen till skriptet på det vi träffade möjliggör att vi kan minska hälsan på det som träffades genom dess AdjustCarHealth-method..
 
             Destroy(gameObject);
                     }
